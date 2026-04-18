@@ -5,7 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - id: default_var
         name: checking default variable name
         run: echo "$GITHUB_ACTION"
