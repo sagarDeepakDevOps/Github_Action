@@ -42,3 +42,8 @@ jobs:
         run: |
           echo $X
           echo "$GITHUB_ENV"
+      - name: Print Event File Path
+        run: echo "$GITHUB_EVENT_PATH"
+     
+      - name: Show Payload
+        run: cat "$GITHUB_EVENT_PATH"
