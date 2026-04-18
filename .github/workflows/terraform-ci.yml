@@ -37,3 +37,8 @@ jobs:
           echo "X=1" >> $GITHUB_ENV
           echo $X
           echo "$GITHUB_ENV"
+
+      - name: variable test2
+        run: |
+          echo $X
+          echo "$GITHUB_ENV"
