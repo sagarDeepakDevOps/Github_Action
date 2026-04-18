@@ -65,3 +65,10 @@ jobs:
           cat "$GITHUB_OUTPUT"
           echo "$GITHUB_RUN_ID"
 
+
+      - id: test_debug
+        if: ${{ runner.debug == '1' }}
+        run: echo "passed"
+               
+
+
