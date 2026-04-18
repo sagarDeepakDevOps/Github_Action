@@ -7,4 +7,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: checking default variable name
-        run: echo "$GITHUB_ACTION"
+        run: |
+          echo "$GITHUB_ACTION"
+          echo "$GITHUB_ACTION_PATH"
