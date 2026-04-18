@@ -23,7 +23,7 @@ jobs:
           terraform_version: 1.8.5
 
       - name: Run Composite Terraform Validation
-        uses: ./.github/actions/terraform-validate
+        uses: ./.github/actions/terraform-check
         with:
           working-directory: .
 
