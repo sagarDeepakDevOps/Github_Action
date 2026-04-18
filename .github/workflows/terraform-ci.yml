@@ -47,3 +47,20 @@ jobs:
      
       - name: Show Payload
         run: cat "$GITHUB_EVENT_PATH"
+
+
+      - id: meta
+        run: |
+          echo "version=1.2.0" >> $GITHUB_OUTPUT
+          echo "$GITHUB_OUTPUT"
+          cat "$GITHUB_OUTPUT"
+
+      - run: echo "Version is ${{ steps.meta.outputs.version }}"
+
+
+      - id: pathcheck
+        run: |
+          echo "NAME=DEEPAK_SAGAR" >> $GITHUB_OUTPUT
+          echo "$GITHUB_OUTPUT"
+          cat "$GITHUB_OUTPUT"
+
