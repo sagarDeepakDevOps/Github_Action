@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -30,5 +30,9 @@ jobs:
       - name: Terraform Plan Test
         run: |
           terraform plan -input=false
+
+        
+      - name: variable test
+        run: |
           echo "X=1" >> $GITHUB_ENV
           echo $X
