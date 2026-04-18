@@ -63,4 +63,5 @@ jobs:
           echo "NAME=DEEPAK_SAGAR" >> $GITHUB_OUTPUT
           echo "$GITHUB_OUTPUT"
           cat "$GITHUB_OUTPUT"
+          echo "$GITHUB_RUN_ID"
 
