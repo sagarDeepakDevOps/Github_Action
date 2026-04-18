@@ -28,4 +28,7 @@ jobs:
           working-directory: .
 
       - name: Terraform Plan Test
-        run: terraform plan -input=false
+        run: |
+          terraform plan -input=false
+          echo "X=1" >> $GITHUB_ENV
+          echo $X
