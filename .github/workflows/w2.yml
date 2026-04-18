@@ -6,7 +6,9 @@ jobs:
       - id: sets-a-secret
         name: Generate, mask, and output a secret
         run: |
+          echo "::stop-commands::pause123"
           echo "::warning::This will NOT become warning"
+          echo "::pause123::"
           echo "::error::This will NOT become error"
           the_secret=$((RANDOM))
           echo "::add-mask::$the_secret"
