@@ -1,0 +1,27 @@
+# .github/actions/terraform-validate/action.yml
+name: Terraform Validate
+description: Run terraform fmt, init, validate
+
+inputs:
+  working-directory:
+    description: Terraform folder path
+    required: false
+    default: .
+
+runs:
+  using: composite
+  steps:
+    - name: Terraform Format Check
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: terraform fmt -check -recursive
+
+    - name: Terraform Init
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: terraform init -backend=false
+
+    - name: Terraform Validate
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: terraform validate

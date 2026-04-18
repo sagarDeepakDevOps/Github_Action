@@ -1,0 +1,31 @@
+# .github/workflows/terraform-ci.yml
+name: Terraform CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.8.5
+
+      - name: Run Composite Terraform Validation
+        uses: ./.github/actions/terraform-validate
+        with:
+          working-directory: .
+
+      - name: Terraform Plan Test
+        run: terraform plan -input=false
