@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
         with:
           terraform_version: 1.8.5
 
@@ -36,3 +36,4 @@ jobs:
         run: |
           echo "X=1" >> $GITHUB_ENV
           echo $X
+          echo "$GITHUB_ENV"
