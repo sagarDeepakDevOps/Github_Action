@@ -9,9 +9,7 @@ jobs:
           the_secret=$((RANDOM))
           echo "::add-mask::$the_secret"
           echo "secret-number=$the_secret" >> "$GITHUB_OUTPUT"
-          
-      - name: print
-        run: echo "${{ the_secret }}"
+          echo "${{ the_secret }}"
         
       - name: Use that secret output (protected by a mask)
         run: |
